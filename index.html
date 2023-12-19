@@ -14,45 +14,86 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script src="script.js"></script>
+    <script src="particles.js"></script>
+
 </head>
 
 <body>
 
-    <div class="main-description mt-3">
+    <!-- <div class="particles particleContainer">
+        <div id="particles-js">
+            <a
+                role="button"
+                href="#projects"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                class="projectTitleContainer btn btn-outline-light"
+            >
+                <p class="projectTitle display-2 fw-normal">Projects</p>
+            </a>
+        </div>
+    </div> -->
 
-        <h1 class="display-3 text-center"> CS 180 - Final Project </h1>
-        <p class="lead text-center fs-3"> Image Quilting & A Neural Algorithm of Artistic Style </p>
-        <p class="text-center fs-4"> Siddharth Nath - <span>sidnath@berkeley.edu</span> </p>
-        <div style="width: 80%;" class="mx-auto">
-            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                <button class="btn btn-outline-primary me-md-2" type="button" onClick="document.getElementById('image-quilting').scrollIntoView();""> Image Quilting </button>
-                <button class="btn btn-outline-primary" type="button" onClick="document.getElementById('neural-style-transfer').scrollIntoView();"> Neural Algorithm of Artistic Style </button>
+    <div class="main-container" style="position: relative;">
+        <div id="particles-js" style="height: 100%; min-height: 100vh;"></div>
+
+        <div class="main-description mt-3" style="display:inline-block">
+
+            <h1 class="display-1 text-center"> Siddharth Nath </h1>
+            <p class="lead text-center fs-4"> Computer Science & Data Science @ UC Berkeley </p>
+            <div class="d-flex justify-content-evenly links">
+                <a href="https://github.com/SidNath21" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0d6efd" class="bi bi-github"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                </a>
+                <a href="mailto:sidnath21@gmail.com" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0d6efd" class="bi bi-envelope"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/siddharth-nath/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0d6efd" class="bi bi-linkedin"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                    </svg>
+                </a>
             </div>
-            <hr />
-            <!-- <div id="carouselExample" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./imageQuilting/samples/bricks_small.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./imageQuilting/samples/bricks_small.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./imageQuilting/samples/bricks_small.jpg" class="d-block w-100" alt="...">
-                    </div>
+            <p class="text-center fs-5">  </p>
+            <div class="mx-auto">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <button class="btn btn-lg btn-outline-primary me-md-2" type="button"
+                        onClick="document.getElementById('image-quilting').scrollIntoView();""> Projects </button>
+                    <button class=" btn btn-lg btn-outline-primary" type="button"
+                        onClick="document.getElementById('neural-style-transfer').scrollIntoView();"> About Me </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div> -->
+
+            </div>
+
+
+            <div class="downArrow bounce">
+                <img width="40" height="40" alt="" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiBoZWlnaHQ9IjMycHgiIGlkPSLQodC70L7QuV8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yNC4yODUsMTEuMjg0TDE2LDE5LjU3MWwtOC4yODUtOC4yODhjLTAuMzk1LTAuMzk1LTEuMDM0LTAuMzk1LTEuNDI5LDAgIGMtMC4zOTQsMC4zOTUtMC4zOTQsMS4wMzUsMCwxLjQzbDguOTk5LDkuMDAybDAsMGwwLDBjMC4zOTQsMC4zOTUsMS4wMzQsMC4zOTUsMS40MjgsMGw4Ljk5OS05LjAwMiAgYzAuMzk0LTAuMzk1LDAuMzk0LTEuMDM2LDAtMS40MzFDMjUuMzE5LDEwLjg4OSwyNC42NzksMTAuODg5LDI0LjI4NSwxMS4yODR6IiBmaWxsPSIjMTIxMzEzIiBpZD0iRXhwYW5kX01vcmUiLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48L3N2Zz4=" />
+            </div>
+
         </div>
 
     </div>
+
+
+
+
+
 
 
     <div class="project-body mx-auto" style="width: 80%;">
@@ -310,7 +351,8 @@
                     <code>guidance_im</code> to determine the shape of the output while using <code>sample</code> to
                     determine the style/texture of the output image. To account for this change, I modified the cost
                     function that is used to search for next patch to sample. The new cost function is now:
-                    $$ \alpha * [\text{SSD of Overlapping Region}] + (1 - \alpha) * [\text{difference of texture (sample) patch & the target (guidance_im) patch} ] $$
+                    $$ \alpha * [\text{SSD of Overlapping Region}] + (1 - \alpha) * [\text{difference of texture
+                    (sample) patch & the target (guidance_im) patch} ] $$
                     By carefully weighting the <code>alpha</code> parameter along with <code>patch_size</code>, I got
                     the following results:
                 </p>
@@ -366,7 +408,8 @@
                             <img src="./imageQuilting/results/sketch_feynman_transfer.jpg" class="card-img-top"
                                 alt="Image 1">
                             <div class="card-body text-center">
-                                <p class="card-text"> <code>texture_transfer(sample, 27, 4, 1, guidance_image, 0.5)</code> </p>
+                                <p class="card-text">
+                                    <code>texture_transfer(sample, 27, 4, 1, guidance_image, 0.5)</code> </p>
                             </div>
                         </div>
                     </div>
@@ -389,7 +432,8 @@
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                             <div class="card">
-                                <img src="./imageQuilting/results/blur_texture_2.jpg" class="card-img-top" alt="Image 1">
+                                <img src="./imageQuilting/results/blur_texture_2.jpg" class="card-img-top"
+                                    alt="Image 1">
                                 <div class="card-body text-center">
                                     <p class="card-text"> Correspondence Map - Texture </p>
                                 </div>
@@ -423,15 +467,16 @@
                             <img src="./imageQuilting/results/rocks_sid_small_transfer.jpg" class="card-img-top"
                                 alt="Image 1">
                             <div class="card-body text-center">
-                                <p class="card-text"> <code>texture_transfer(sample, 17, 5, 1, guidance_image, 0.5)</code> </p>
+                                <p class="card-text">
+                                    <code>texture_transfer(sample, 17, 5, 1, guidance_image, 0.5)</code> </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                
+
+
                 <hr>
-                
+
                 <div class="container grid-container">
 
                     <div class="row align-items-center justify-content-center">
@@ -445,7 +490,8 @@
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                             <div class="card">
-                                <img src="./imageQuilting/results/blur_texture_3.jpg" class="card-img-top" alt="Image 1">
+                                <img src="./imageQuilting/results/blur_texture_3.jpg" class="card-img-top"
+                                    alt="Image 1">
                                 <div class="card-body text-center">
                                     <p class="card-text"> Correspondence Map - Texture </p>
                                 </div>
@@ -477,7 +523,8 @@
                                 <img src="./imageQuilting/results/white_small_avocado_transfer.jpg" class="card-img-top"
                                     alt="Image 1">
                                 <div class="card-body text-center">
-                                    <p class="card-text"> <code>texture_transfer(sample, 15, 4, 1, guidance_image, 0.7)</code> </p>
+                                    <p class="card-text">
+                                        <code>texture_transfer(sample, 15, 4, 1, guidance_image, 0.7)</code> </p>
                                 </div>
                             </div>
                         </div>
@@ -491,13 +538,17 @@
             <div class="project-insight">
                 <h1 class="display-6"> Bells & Whistles: Texture Transfer + Blending </h1>
                 <p class="lead">
-                    To get more satisfying results, I decided to use a combination of texture transfer and blending to create a face-in-toast image. 
-                    To accomplish this I utilized the Laplacian pyramid blending methods that I implemented in Project 2.
+                    To get more satisfying results, I decided to use a combination of texture transfer and blending to
+                    create a face-in-toast image.
+                    To accomplish this I utilized the Laplacian pyramid blending methods that I implemented in Project
+                    2.
                 </p>
 
                 <p>
-                    I started by first cropping the white edges from the border of the orignal toast image so the white borders wouldn't be sampled during the texture transfer. 
-                    Using the cropped toast image as the source texture and Vishali as the target image, I ran the <code>texture_transfer</code> method and got the following output:
+                    I started by first cropping the white edges from the border of the orignal toast image so the white
+                    borders wouldn't be sampled during the texture transfer.
+                    Using the cropped toast image as the source texture and Vishali as the target image, I ran the
+                    <code>texture_transfer</code> method and got the following output:
                 </p>
 
                 <hr>
@@ -506,8 +557,7 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                         <div class="card">
-                            <img src="./imageQuilting/samples/toast.jpg" class="card-img-top"
-                                alt="Image 1">
+                            <img src="./imageQuilting/samples/toast.jpg" class="card-img-top" alt="Image 1">
                             <div class="card-body text-center">
                                 <p class="card-text"> Sample Toast </p>
                             </div>
@@ -515,8 +565,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                         <div class="card">
-                            <img src="./imageQuilting/samples/vishali_face_2.jpeg" class="card-img-top"
-                                alt="Image 1">
+                            <img src="./imageQuilting/samples/vishali_face_2.jpeg" class="card-img-top" alt="Image 1">
                             <div class="card-body text-center">
                                 <p class="card-text"> Target Face </p>
                             </div>
@@ -527,22 +576,23 @@
                             <img src="./imageQuilting/results/toast_vishali_face_2_transfer.jpg" class="card-img-top"
                                 alt="Image 1">
                             <div class="card-body text-center">
-                                <p class="card-text"> <code>texture_transfer(cropped_sample, 27, 4, 1, guidance_image, 0.5)</code> </p>
+                                <p class="card-text">
+                                    <code>texture_transfer(cropped_sample, 27, 4, 1, guidance_image, 0.5)</code> </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
 
-                Given this output, we can define a binary mask on the original toast image and use that for our Laplacian blending between the original toast and the result of the texture transfer method:
+                Given this output, we can define a binary mask on the original toast image and use that for our
+                Laplacian blending between the original toast and the result of the texture transfer method:
                 <br> <br>
                 <h5>Results:</h5>
 
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                         <div class="card">
-                            <img src="./imageQuilting/results/mask.jpg" class="card-img-top"
-                                alt="Image 1">
+                            <img src="./imageQuilting/results/mask.jpg" class="card-img-top" alt="Image 1">
                             <div class="card-body text-center">
                                 <p class="card-text"> Original Binary Mask </p>
                             </div>
@@ -559,8 +609,7 @@
                     </div> -->
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                         <div class="card">
-                            <img src="./imageQuilting/results/face-in-toast.jpg" class="card-img-top"
-                                alt="Image 1">
+                            <img src="./imageQuilting/results/face-in-toast.jpg" class="card-img-top" alt="Image 1">
                             <div class="card-body text-center">
                                 <p class="card-text"> Face-In-Toast! </p>
                             </div>
@@ -574,68 +623,80 @@
             <div class="project-insight">
                 <h1 class="display-6"> Image Quilting Insights </h1>
                 <p class="lead">
-                    I really enjoyed completing this project and learning more about how I can implement image quilting from scratch. My favorite part was reading through the paper and seeing the results of the texture transfer on my own images.
+                    I really enjoyed completing this project and learning more about how I can implement image quilting
+                    from scratch. My favorite part was reading through the paper and seeing the results of the texture
+                    transfer on my own images.
                 </p>
             </div>
         </div>
 
         <hr>
 
-        <div class="project-overview" id = "neural-style-transfer">
+        <div class="project-overview" id="neural-style-transfer">
             <h1 class="display-5"> Neural Algorithm of Artistic Style Overview </h1>
             <p class="lead">
-                This project involved reimplementing the paper <a
-                    href="https://arxiv.org/pdf/1508.06576.pdf"> <i>A Neural Algorithm of Artistic Style</i> </a>! 
-                The paper explains how to use Convolutional Neural Networks - specifically the VGG-19 architecture - to capture the content and style of a given image.     
-                The key finding of this paper is that representations of content and style in the CNN are separable; therefore, we can manipulate both representations independently to perform style transfering.
+                This project involved reimplementing the paper <a href="https://arxiv.org/pdf/1508.06576.pdf"> <i>A
+                        Neural Algorithm of Artistic Style</i> </a>!
+                The paper explains how to use Convolutional Neural Networks - specifically the VGG-19 architecture - to
+                capture the content and style of a given image.
+                The key finding of this paper is that representations of content and style in the CNN are separable;
+                therefore, we can manipulate both representations independently to perform style transfering.
             </p>
-        
+
         </div>
 
         <div class="1_1">
             <h1 class="display-6"> Part 1: Modifying VGG-19 Architecture</h1>
             <p class="lead">
-                The first step in this project involved downloading the pretrained VGG-19 CNN model to use for this task. The paper uses the feature space provided by the 16 convolutional and 5 pooling layers of the 19 layer VGG-Network. 
-                However, the authors do no use any of the fully connect layers and they opt to replace the max-pooling operations with average pooling to improve performance. 
+                The first step in this project involved downloading the pretrained VGG-19 CNN model to use for this
+                task. The paper uses the feature space provided by the 16 convolutional and 5 pooling layers of the 19
+                layer VGG-Network.
+                However, the authors do no use any of the fully connect layers and they opt to replace the max-pooling
+                operations with average pooling to improve performance.
                 <hr>
                 <br>
 
-                <div class="mx-auto w-75">
-                    <img src="./neuralStyleTransfer/images/vgg_network2.png" class="img-fluid" alt="Responsive image">
-                </div>
-                <br>
+            <div class="mx-auto w-75">
+                <img src="./neuralStyleTransfer/images/vgg_network2.png" class="img-fluid" alt="Responsive image">
+            </div>
+            <br>
 
-                <p>
-                    The pretrained VGG-Network contains two different <code>Sequential</code> PyTorch implementations: features (containing the convolution and pooling layers), and classifier (containing fully connected layers). Since we we need the output of the individual convolution layers to measure the content and style loss, we use the features module!
-    
-                    To extract the content and style representations from the CNN, the authors recommends using the feature output of convolutional layer 4_2 to learn the "content" of the image, while using output of layers 1_1, 2_1, 3_1, 4_1, and 5_1 to learn the "style" of the image.
-                    Since I only need the outputs from these 6 convolutional layers, I modified the <code>forward()</code> function of my VGG model to return only those responses.
-                </p>
+            <p>
+                The pretrained VGG-Network contains two different <code>Sequential</code> PyTorch implementations:
+                features (containing the convolution and pooling layers), and classifier (containing fully connected
+                layers). Since we we need the output of the individual convolution layers to measure the content and
+                style loss, we use the features module!
 
-                <p>
-                    The initial and modified network architecture after renaming layers and changing the max-pooling operations to avg-pooling is shown below:
-                </p>
+                To extract the content and style representations from the CNN, the authors recommends using the feature
+                output of convolutional layer 4_2 to learn the "content" of the image, while using output of layers 1_1,
+                2_1, 3_1, 4_1, and 5_1 to learn the "style" of the image.
+                Since I only need the outputs from these 6 convolutional layers, I modified the <code>forward()</code>
+                function of my VGG model to return only those responses.
+            </p>
 
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
-                        <div class="card">
-                            <img src="./neuralStyleTransfer/images/initial_model.png" class="card-img-top"
-                                alt="Image 1">
-                            <div class="card-body text-center">
-                                <p class="card-text"> Pretrained Architecture </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
-                        <div class="card">
-                            <img src="./neuralStyleTransfer/images/modified_model.png" class="card-img-top"
-                                alt="Image 1">
-                            <div class="card-body text-center">
-                                <p class="card-text"> Modified VGG-19 Architecture </p>
-                            </div>
+            <p>
+                The initial and modified network architecture after renaming layers and changing the max-pooling
+                operations to avg-pooling is shown below:
+            </p>
+
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <img src="./neuralStyleTransfer/images/initial_model.png" class="card-img-top" alt="Image 1">
+                        <div class="card-body text-center">
+                            <p class="card-text"> Pretrained Architecture </p>
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <img src="./neuralStyleTransfer/images/modified_model.png" class="card-img-top" alt="Image 1">
+                        <div class="card-body text-center">
+                            <p class="card-text"> Modified VGG-19 Architecture </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             </p>
         </div>
@@ -643,24 +704,30 @@
         <div class="1_1">
             <h1 class="display-6"> Part 2: Defining Loss Functions </h1>
             <p class="lead">
-                Since the paper separates the content and style representations of images, we have two loss functions that we use when training the modified VGG-19 network. 
-                In other words, the loss function that we aim to minimize contains two terms: one for content and another for style!
+                Since the paper separates the content and style representations of images, we have two loss functions
+                that we use when training the modified VGG-19 network.
+                In other words, the loss function that we aim to minimize contains two terms: one for content and
+                another for style!
             </p>
         </div>
 
         <hr>
         <p>
-            
+
         </p>
         <h5> Content Loss </h5>
 
         <p>
-            The authors of the paper realized that using the feature representation at convolution layer 4_2 was the most effective in representing the content of the image. 
-            However, this is a parameter that can be tuned to get different results since higher layers in the network capture the high-level content of an image while lower layers reproduce exact pixel values of the original image.
+            The authors of the paper realized that using the feature representation at convolution layer 4_2 was the
+            most effective in representing the content of the image.
+            However, this is a parameter that can be tuned to get different results since higher layers in the network
+            capture the high-level content of an image while lower layers reproduce exact pixel values of the original
+            image.
         </p>
 
         <p>
-            To calculate the content loss of the content image with respect to the image we are generating, we use the outputs of convolutional layer 4_2 in the equation below:
+            To calculate the content loss of the content image with respect to the image we are generating, we use the
+            outputs of convolutional layer 4_2 in the equation below:
         </p>
 
 
@@ -670,13 +737,17 @@
 
 
         <p>
-            Here, the content loss is simply the Mean Squared Error (MSE) between \( F \) (the 4_2 feature map of the generated image) - and \( P \) (the 4_2 feature map of the content image)
+            Here, the content loss is simply the Mean Squared Error (MSE) between \( F \) (the 4_2 feature map of the
+            generated image) - and \( P \) (the 4_2 feature map of the content image)
         </p>
 
         <h5> Style Loss </h5>
 
         <p>
-            Calculating the style loss is not as simple as the content loss. To capture the "style" of an image, we first build a style representation from the feature maps that calculated the correlations between the different feature responses. This is done by calculating the Gram Matrix - the inner product between the vectorized feature maps. 
+            Calculating the style loss is not as simple as the content loss. To capture the "style" of an image, we
+            first build a style representation from the feature maps that calculated the correlations between the
+            different feature responses. This is done by calculating the Gram Matrix - the inner product between the
+            vectorized feature maps.
         </p>
 
         <div class="mx-auto">
@@ -684,7 +755,9 @@
         </div>
 
         <p>
-            After computing the Gram matricies for each vectorized feature map, we cstart by minimizing the mean-squared distance between the entries of the Gram matrix from the original image and the Gram matrix of the image to be generated. For a given layer l, the contribution of that layer to the style loss is defined as:
+            After computing the Gram matricies for each vectorized feature map, we cstart by minimizing the mean-squared
+            distance between the entries of the Gram matrix from the original image and the Gram matrix of the image to
+            be generated. For a given layer l, the contribution of that layer to the style loss is defined as:
         </p>
 
         <div class="w-75">
@@ -692,7 +765,8 @@
         </div>
 
         <p>
-            By aggregating this error across all the convolutional layers, we get the total style loss which is equal to:
+            By aggregating this error across all the convolutional layers, we get the total style loss which is equal
+            to:
         </p>
 
         <div class="w-75">
@@ -700,31 +774,40 @@
         </div>
 
         <p>
-            In the equation above, \( w_{l} \) represents the weight of the contribution of each layer to the total loss. For this implementation, I set \( w_{l} = 1/5 \) for convolutional layers 1_1, 2_1, 3_1, 4_1, and 5_1. For any other layers, \( w_{l} = 0\)
+            In the equation above, \( w_{l} \) represents the weight of the contribution of each layer to the total
+            loss. For this implementation, I set \( w_{l} = 1/5 \) for convolutional layers 1_1, 2_1, 3_1, 4_1, and 5_1.
+            For any other layers, \( w_{l} = 0\)
         </p>
 
         <h5> Total Loss </h5>
         <p>
-            Combining the Style Loss with the Content Loss, the total loss we minimize is: 
+            Combining the Style Loss with the Content Loss, the total loss we minimize is:
             $$
             \LARGE{
-                L_{total} (\vec{p}^{\,}, \vec{a}^{\,}, \vec{x}^{\,}) = \alpha * L_{content}(\vec{p}^{\,}, \vec{x}^{\,}) + \beta * L_{style}(\vec{a}^{\,}, \vec{x}^{\,})
+            L_{total} (\vec{p}^{\,}, \vec{a}^{\,}, \vec{x}^{\,}) = \alpha * L_{content}(\vec{p}^{\,}, \vec{x}^{\,}) +
+            \beta * L_{style}(\vec{a}^{\,}, \vec{x}^{\,})
             }
             $$
         </p>
         <p>
-            Here, \(\alpha\) and \(\beta\) are parameters that control the weighting factors for content (\( \alpha \)) and style (\( \beta \)).
+            Here, \(\alpha\) and \(\beta\) are parameters that control the weighting factors for content (\( \alpha \))
+            and style (\( \beta \)).
         </p>
 
         <div class="1_1">
             <h1 class="display-6"> Part 3: Training & Results </h1>
             <p class="">
-                To train this model and optimize the loss function, it is important to performing some preprocessing steps to get the best results. 
+                To train this model and optimize the loss function, it is important to performing some preprocessing
+                steps to get the best results.
             </p>
             <p>
-                Firstly, we need to resize the images to the appropriate size; since I have access to Google Colab's GPU compute power, I resized the content and style images to 512 by 512 pixels. 
-                Additionally, we have to convert this resized image of shape (height, width, channel size) into (batch size, channel size, height, width) so that our images are compatible with the VGG-19 architecture!
-                When downloading the pretrained model, it is also important to set the network to evaluation mode using <code>.eval()</code> since some of the model's layers have different behavior during training vs evaluation.
+                Firstly, we need to resize the images to the appropriate size; since I have access to Google Colab's GPU
+                compute power, I resized the content and style images to 512 by 512 pixels.
+                Additionally, we have to convert this resized image of shape (height, width, channel size) into (batch
+                size, channel size, height, width) so that our images are compatible with the VGG-19 architecture!
+                When downloading the pretrained model, it is also important to set the network to evaluation mode using
+                <code>.eval()</code> since some of the model's layers have different behavior during training vs
+                evaluation.
             </p>
         </div>
 
@@ -732,16 +815,20 @@
         <h5> Training </h5>
 
         <p>
-            For training, I decided to use the Adam optimizer initialized with a learning rate of 0.004 - the paper did not specify what optimizer to use but using the Adam optimizer turned out fine.
-            The paper also mentions that the ratio \(\alpha / \beta \) was either \( 1 * 10^{-3} \text{ or } 1 * 10^{-4}\). Therefore, I started off by setting \( \alpha = 1 \) and \( \beta = 1000 \).
-            In the paper, the authors initialize a randomized white-noise image to be the image that is getting optimized. However, I got better results by initializing the image-to-be-generated with a copy of the content image.
+            For training, I decided to use the Adam optimizer initialized with a learning rate of 0.004 - the paper did
+            not specify what optimizer to use but using the Adam optimizer turned out fine.
+            The paper also mentions that the ratio \(\alpha / \beta \) was either \( 1 * 10^{-3} \text{ or } 1 *
+            10^{-4}\). Therefore, I started off by setting \( \alpha = 1 \) and \( \beta = 1000 \).
+            In the paper, the authors initialize a randomized white-noise image to be the image that is getting
+            optimized. However, I got better results by initializing the image-to-be-generated with a copy of the
+            content image.
         </p>
 
         <p>
-            After only 300 training iterations (optimizer steps), I got the following results: 
+            After only 300 training iterations (optimizer steps), I got the following results:
         </p>
 
-        <h5> Results </h5>        
+        <h5> Results </h5>
 
         <div class="row align-items-center justify-content-center">
 
@@ -763,7 +850,8 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                 <div class="card">
-                    <img src="./neuralStyleTransfer/images/results/dancing_picasso.jpg" class="card-img-top" alt="Image 1">
+                    <img src="./neuralStyleTransfer/images/results/dancing_picasso.jpg" class="card-img-top"
+                        alt="Image 1">
                     <div class="card-body text-center">
                         <p class="card-text"> Output </p>
                     </div>
@@ -772,9 +860,13 @@
         </div>
 
         <p>
-            Content Image of a Balerina in the style of <i>Femme nue assise</i> by Pablo Picasso! The content image was taken from <a href="https://pytorch.org/tutorials/advanced/neural_style_tutorial.html">this</a> PyTorch resource. The results turned out pretty good but we lose many of the high frequency details of the ballerina. I tried fine-tuning different parameters such as the number of style layers and the \(\alpha \text{ and } \beta \) values but it did not make much improvement!
+            Content Image of a Balerina in the style of <i>Femme nue assise</i> by Pablo Picasso! The content image was
+            taken from <a href="https://pytorch.org/tutorials/advanced/neural_style_tutorial.html">this</a> PyTorch
+            resource. The results turned out pretty good but we lose many of the high frequency details of the
+            ballerina. I tried fine-tuning different parameters such as the number of style layers and the \(\alpha
+            \text{ and } \beta \) values but it did not make much improvement!
         </p>
-        
+
         <hr>
 
         <div class="row align-items-center justify-content-center">
@@ -797,7 +889,8 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                 <div class="card">
-                    <img src="./neuralStyleTransfer/images/results/berkeley_starry_night.jpg" class="card-img-top" alt="Image 1">
+                    <img src="./neuralStyleTransfer/images/results/berkeley_starry_night.jpg" class="card-img-top"
+                        alt="Image 1">
                     <div class="card-body text-center">
                         <p class="card-text"> Output </p>
                     </div>
@@ -807,10 +900,11 @@
 
 
         <p>
-            This result blends a photo of Berkeley that I took with the style of <i>The Starry Night</i> by Vincent van Gogh!
+            This result blends a photo of Berkeley that I took with the style of <i>The Starry Night</i> by Vincent van
+            Gogh!
         </p>
 
-        
+
 
         <hr>
 
@@ -843,15 +937,20 @@
         </div>
 
         <p>
-            This final result combines a photo that I took of Vishali with the style of <i>Der Schrei</i> by Edvard Munch. Similar to the first example, many smaller details of the face & body are lost as a result of this style transfer. In my notebook, I tried varying some of the parameters and I even set the \( \alpha:\beta \) ratio to \(1 * 10^{-2}\) but it didn't make a big difference!
+            This final result combines a photo that I took of Vishali with the style of <i>Der Schrei</i> by Edvard
+            Munch. Similar to the first example, many smaller details of the face & body are lost as a result of this
+            style transfer. In my notebook, I tried varying some of the parameters and I even set the \( \alpha:\beta \)
+            ratio to \(1 * 10^{-2}\) but it didn't make a big difference!
         </p>
 
 
         <div class="project-insight">
             <h1 class="display-6"> Neural Style Transfer Insights </h1>
             <p class="lead">
-                I enjoyed learning how to re-implement the paper <a
-                href="https://arxiv.org/pdf/1508.06576.pdf"> <i>A Neural Algorithm of Artistic Style</i> </a> from scratch! It was a very valuable experience having to dissect the paper and take in all of the information provided by the authors. Implementing this project was also fun since I had the chance to use some of my own images!
+                I enjoyed learning how to re-implement the paper <a href="https://arxiv.org/pdf/1508.06576.pdf"> <i>A
+                        Neural Algorithm of Artistic Style</i> </a> from scratch! It was a very valuable experience
+                having to dissect the paper and take in all of the information provided by the authors. Implementing
+                this project was also fun since I had the chance to use some of my own images!
             </p>
         </div>
 

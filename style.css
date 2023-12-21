@@ -17,7 +17,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
+    background-color: #F8F9FA;
     background-image: url("");
     background-repeat: no-repeat;
     background-size: cover;
@@ -149,4 +149,21 @@ svg:hover {
     -webkit-transform: translateY(-15px);
     transform: translateY(-15px);
   }
+}
+
+body {
+    background-color: #F8F9FA;
+    /* background-color: white; */
+}
+
+.card:hover {
+    border: 1px solid black;
+    transition: 0.25s linear;
+    opacity: 90%;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
 }

@@ -152,13 +152,14 @@ svg:hover {
 }
 
 body {
-    background-color: #F8F9FA;
+    /* background-color: #F8F9FA; */
     /* background-color: white; */
 }
 
 .card:hover {
     border: 1px solid black;
     transition: 0.25s linear;
+    box-shadow: 0 0 10px 0 rgba(100, 100, 100, 1);
     opacity: 90%;
 }
 
@@ -166,4 +167,13 @@ body {
     width: 100%;
     height: 25vw;
     object-fit: cover;
+}
+
+.project-body {
+    background-color: #F8F9FA;
+}
+
+.about-body {
+    background-color: #2B2D34;
+    color: white;
 }

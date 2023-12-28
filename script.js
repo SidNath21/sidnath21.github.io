@@ -14,9 +14,11 @@ function checkPosition() {
     if (windowY < windowHeight) {
       // Scrolling UP
       nav.style.visibility = "hidden"
+      // nav.classList.toggle("active");
     } else {
       // Scrolling DOWN
         nav.style.visibility = "visible"
+        // nav.classList.toggle("active");
     }
     scrollPos = windowY;
   }

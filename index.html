@@ -10,6 +10,7 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -128,8 +129,6 @@
 
         <div class="container">
 
-
-
             <div class="project-overview" id="projects">
                 <h1 class="display-2 text-center"> Projects & Experience </h1>
                 <hr>
@@ -138,8 +137,15 @@
 
             <!-- <div class="row align-items-center justify-content-center"> -->
 
-            <div id="project-body" class="row"></div>
+            <div class="filter-buttons">
 
+            </div>
+
+            <div id="project-body" class="row">
+                
+            </div>
+
+<!--             
             <div class="row">
 
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
@@ -147,14 +153,15 @@
                         <img src="images/deepfm2.png" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">The Trade Desk - Data Science Internship</h5>
-                            <p class="card-text">Enhanced deep learning click-through rate (CTR) prediction models by integrating user data features, optimizing low-latency advertisement bidding algorithms to analyze 13 million advertising impressions every second.
+                            <p class="card-text">Enhanced deep learning click-through rate (CTR) prediction models by
+                                integrating user data features, optimizing low-latency advertisement bidding algorithms
+                                to analyze 13 million advertising impressions every second.
                             </p>
                         </div>
                         <div class="card-body d-flex align-items-end justify-content-around">
-                            <a 
-                                style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
+                            <a style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
                                 target="_blank">
-                                <button type="button" disabled class="w-100 mx-1 btn btn-outline-dark" >
+                                <button type="button" disabled class="w-100 mx-1 btn btn-outline-dark">
                                     Project
                                 </button>
                             </a>
@@ -178,8 +185,7 @@
                             </p>
                         </div>
                         <div class="card-body d-flex align-items-end justify-content-around">
-                            <a 
-                                style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
+                            <a style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
                                 target="_blank">
                                 <button type="button" disabled class="w-100 mx-1 btn btn-outline-dark">
                                     Project
@@ -213,7 +219,6 @@
                                     Project
                                 </button>
                             </a>
-                            <!-- <button type="button" class="w-100 mx-1 btn btn-outline-danger">Code</button>    -->
                         </div>
                         <div class="card-footer text-body-secondary">
                             <span class="badge" style="background-color: #083A42">Python</span>
@@ -239,7 +244,6 @@
                                     Project
                                 </button>
                             </a>
-                            <!-- <button type="button" class="w-100 mx-1 btn btn-outline-danger">Code</button>    -->
                         </div>
                         <div class="card-footer text-body-secondary">
                             <span class="badge" style="background-color: #083A42">Python</span>
@@ -300,7 +304,6 @@
                                     Project
                                 </button>
                             </a>
-                            <!-- <button type="button" class="w-100 mx-1 btn btn-outline-danger">Code</button>    -->
                         </div>
                         <div class="card-footer text-body-secondary">
                             <span class="badge" style="background-color: #083A42">Python</span>
@@ -329,7 +332,6 @@
                                     Project
                                 </button>
                             </a>
-                            <!-- <button type="button" class="w-100 mx-1 btn btn-outline-danger">Code</button>    -->
                         </div>
                         <div class="card-footer text-body-secondary">
                             <span class="badge" style="background-color: #083A42">Python</span>
@@ -459,7 +461,6 @@
                                     Project
                                 </button>
                             </a>
-                            <!-- <button type="button" class="w-100 mx-1 btn btn-outline-danger">Code</button>    -->
                         </div>
                         <div class="card-footer text-body-secondary">
                             <span class="badge" style="background-color: #21601c">Vue.js</span>
@@ -486,182 +487,195 @@
                                     Project
                                 </button>
                             </a>
-                            <!-- <button type="button" class="w-100 mx-1 btn btn-outline-danger">Code</button>    -->
                         </div>
                         <div class="card-footer text-body-secondary">
                             <span class="badge" style="background-color: #083A42">Python</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch"">
-                <div class=" card">
-                    <img src="images/final_oraple.jpg" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Image Filtering and Frequency Analysis</h5>
-                        <p class="card-text">Applied image processing techniques using filters, frequency analysis, and
-                            Laplacian/Gaussian Stacks for enhancing images, creating "hybrid" images, and preforming
-                            multiresolution blending.</p>
-                    </div>
-                    <div class="card-body d-flex align-items-end justify-content-around">
-                        <a href="https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj2/sidnath/submission/"
-                            style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
-                            target="_blank">
-                            <button type="button" class="w-100 mx-1 btn btn-outline-dark">
-                                Project
-                            </button>
-                        </a>
-                        <!-- <button type="button" class="w-100 mx-1 btn btn-outline-danger">Code</button>    -->
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                        <span class="badge" style="background-color: #083A42">Python</span>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
+                    <div class=" card">
+                        <img src="images/final_oraple.jpg" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Image Filtering and Frequency Analysis</h5>
+                            <p class="card-text">Applied image processing techniques using filters, frequency analysis,
+                                and
+                                Laplacian/Gaussian Stacks for enhancing images, creating "hybrid" images, and preforming
+                                multiresolution blending.</p>
+                        </div>
+                        <div class="card-body d-flex align-items-end justify-content-around">
+                            <a href="https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj2/sidnath/submission/"
+                                style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
+                                target="_blank">
+                                <button type="button" class="w-100 mx-1 btn btn-outline-dark">
+                                    Project
+                                </button>
+                            </a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            <span class="badge" style="background-color: #083A42">Python</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
-                <div class="card">
-                    <img src="images/view1_view2_blended.jpg" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Image Warping and Mosaicing</h5>
-                        <p class="card-text">Applied Harris Corner Detection, Adaptive Non-Maximal Suppression, and
-                            RANSAC to automatically stitch and create image mosaics.
-                        </p>
-                    </div>
-                    <div class="card-body d-flex align-items-end justify-content-around">
-                        <a href="https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj4B/sidnath/submission/"
-                            style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
-                            target="_blank">
-                            <button type="button" class="w-100 mx-1 btn btn-outline-dark">
-                                Project
-                            </button>
-                        </a>
-                        <!-- <button type="button" class="w-100 mx-1 btn btn-outline-danger">Code</button>    -->
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                        <span class="badge" style="background-color: #083A42">Python</span>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
-                <div class="card">
-                    <img src="images/cs184_proj4.png" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Cloth Simulator</h5>
-                        <p class="card-text">Implemented a real-time cloth simulation by modeling a system of point masses and springs. Implemented numerical integration techniques (Verlet integration), collisions with other objects, and vertex & fragment shading programs. 
-                        </p>
-                    </div>
-                    <div class="card-body d-flex align-items-end justify-content-around">
-                        <a href="https://cal-cs184-student.github.io/hw-webpages-sp24-SidNath21/hw4/index.html"
-                            style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
-                            target="_blank">
-                            <button type="button" class="w-100 mx-1 btn btn-outline-dark">
-                                Project
-                            </button>
-                        </a>
-                        <!-- <button type="button" class="w-100 mx-1 btn btn-outline-danger">Code</button>    -->
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                        <span class="badge" style="background-color: #083A42">C++</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
-                <div class="card">
-                    <img src="images/cs184_proj3.png" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Path Tracing Renderer</h5>
-                        <p class="card-text">Implemented a physically-based renderer by generating rays and handling intersections with scene geometry, constructing a Bounding Volume Hierarchy (BVH) to accelerate rendering, and simulating both direct and indirect lighting for realistic image synthesis.
-                        </p>
-                    </div>
-                    <div class="card-body d-flex align-items-end justify-content-around">
-                        <a href="https://cal-cs184-student.github.io/hw-webpages-sp24-SidNath21/hw3/index.html"
-                            style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
-                            target="_blank">
-                            <button type="button" class="w-100 mx-1 btn btn-outline-dark">
-                                Project
-                            </button>
-                        </a>
-                        <!-- <button type="button" class="w-100 mx-1 btn btn-outline-danger">Code</button>    -->
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                        <span class="badge" style="background-color: #083A42">C++</span>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <img src="images/view1_view2_blended.jpg" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Image Warping and Mosaicing</h5>
+                            <p class="card-text">Applied Harris Corner Detection, Adaptive Non-Maximal Suppression, and
+                                RANSAC to automatically stitch and create image mosaics.
+                            </p>
+                        </div>
+                        <div class="card-body d-flex align-items-end justify-content-around">
+                            <a href="https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj4B/sidnath/submission/"
+                                style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
+                                target="_blank">
+                                <button type="button" class="w-100 mx-1 btn btn-outline-dark">
+                                    Project
+                                </button>
+                            </a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            <span class="badge" style="background-color: #083A42">Python</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
-                <div class="card">
-                    <img src="images/cs184_proj2.png" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Mesh Edit</h5>
-                        <p class="card-text">Explored geometric modeling by implementing Bézier curves and surfaces using de Casteljau's algorithm, manipulating triangle meshes with the half-edge data structure, and performing loop subdivision for mesh refinement. Created Bézier curves and surfaces, managed mesh operations like edge flips and splits, and applied loop subdivision to upsample meshes.
-                        </p>
-                    </div>
-                    <div class="card-body d-flex align-items-end justify-content-around">
-                        <a href="https://cal-cs184-student.github.io/hw-webpages-sp24-SidNath21/hw2/index.html"
-                            style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
-                            target="_blank">
-                            <button type="button" class="w-100 mx-1 btn btn-outline-dark">
-                                Project
-                            </button>
-                        </a>
-                        <!-- <button type="button" class="w-100 mx-1 btn btn-outline-danger">Code</button>    -->
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                        <span class="badge" style="background-color: #083A42">C++</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
-                <div class="card">
-                    <img src="images/cs184_proj1.png" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Rasterizer</h5>
-                        <p class="card-text">Implemented a rasterizer that can draw basic shapes like triangles and apply various transformations, antialiasing techniques, and texture mapping. Explored texture mapping using different sampling methods, super sampling, and hierarchical transformations to manipulate objects in a scene.
-                        </p>
-                    </div>
-                    <div class="card-body d-flex align-items-end justify-content-around">
-                        <a href="https://cal-cs184-student.github.io/hw-webpages-sp24-SidNath21/hw1/index.html"
-                            style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
-                            target="_blank">
-                            <button type="button" class="w-100 mx-1 btn btn-outline-dark">
-                                Project
-                            </button>
-                        </a>
-                        <!-- <button type="button" class="w-100 mx-1 btn btn-outline-danger">Code</button>    -->
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                        <span class="badge" style="background-color: #083A42">C++</span>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <img src="images/cs184_proj4.png" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Cloth Simulator</h5>
+                            <p class="card-text">Implemented a real-time cloth simulation by modeling a system of point
+                                masses and springs. Implemented numerical integration techniques (Verlet integration),
+                                collisions with other objects, and vertex & fragment shading programs.
+                            </p>
+                        </div>
+                        <div class="card-body d-flex align-items-end justify-content-around">
+                            <a href="https://cal-cs184-student.github.io/hw-webpages-sp24-SidNath21/hw4/index.html"
+                                style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
+                                target="_blank">
+                                <button type="button" class="w-100 mx-1 btn btn-outline-dark">
+                                    Project
+                                </button>
+                            </a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            <span class="badge" style="background-color: #083A42">C++</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
-                <div class="card">
-                    <img src="images/2dgs2.png" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">2D Gaussian Splatting</h5>
-                        <p class="card-text">Explored Novel View Synthesis by comparing Neural Radiance Fields (NeRF) and 2D Gaussian Splatting (2DGS). Implemented 2DGS with features like Harris Corner detection for keypoint initialization and adaptive control of Gaussians, while the 2D NeRF model used a Multi-layer Perceptron to fit images. 
-                        </p>
-                    </div>
-                    <div class="card-body d-flex align-items-end justify-content-around">
-                        <a href="https://cs184.mehvix.com/final/"
-                            style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
-                            target="_blank">
-                            <button type="button" class="w-100 mx-1 btn btn-outline-dark">
-                                Project
-                            </button>
-                        </a>
-                        <!-- <button type="button" class="w-100 mx-1 btn btn-outline-danger">Code</button>    -->
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                        <span class="badge" style="background-color: #083A42">C++</span>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <img src="images/cs184_proj3.png" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Path Tracing Renderer</h5>
+                            <p class="card-text">Implemented a physically-based renderer by generating rays and handling
+                                intersections with scene geometry, constructing a Bounding Volume Hierarchy (BVH) to
+                                accelerate rendering, and simulating both direct and indirect lighting for realistic
+                                image
+                                synthesis.
+                            </p>
+                        </div>
+                        <div class="card-body d-flex align-items-end justify-content-around">
+                            <a href="https://cal-cs184-student.github.io/hw-webpages-sp24-SidNath21/hw3/index.html"
+                                style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
+                                target="_blank">
+                                <button type="button" class="w-100 mx-1 btn btn-outline-dark">
+                                    Project
+                                </button>
+                            </a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            <span class="badge" style="background-color: #083A42">C++</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <img src="images/cs184_proj2.png" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Mesh Edit</h5>
+                            <p class="card-text">Explored geometric modeling by implementing Bézier curves and surfaces
+                                using de Casteljau's algorithm, manipulating triangle meshes with the half-edge data
+                                structure, and performing loop subdivision for mesh refinement. Created Bézier curves
+                                and
+                                surfaces, managed mesh operations like edge flips and splits, and applied loop
+                                subdivision
+                                to upsample meshes.
+                            </p>
+                        </div>
+                        <div class="card-body d-flex align-items-end justify-content-around">
+                            <a href="https://cal-cs184-student.github.io/hw-webpages-sp24-SidNath21/hw2/index.html"
+                                style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
+                                target="_blank">
+                                <button type="button" class="w-100 mx-1 btn btn-outline-dark">
+                                    Project
+                                </button>
+                            </a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            <span class="badge" style="background-color: #083A42">C++</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <img src="images/cs184_proj1.png" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Rasterizer</h5>
+                            <p class="card-text">Implemented a rasterizer that can draw basic shapes like triangles and
+                                apply various transformations, antialiasing techniques, and texture mapping. Explored
+                                texture mapping using different sampling methods, super sampling, and hierarchical
+                                transformations to manipulate objects in a scene.
+                            </p>
+                        </div>
+                        <div class="card-body d-flex align-items-end justify-content-around">
+                            <a href="https://cal-cs184-student.github.io/hw-webpages-sp24-SidNath21/hw1/index.html"
+                                style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
+                                target="_blank">
+                                <button type="button" class="w-100 mx-1 btn btn-outline-dark">
+                                    Project
+                                </button>
+                            </a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            <span class="badge" style="background-color: #083A42">C++</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <img src="images/2dgs2.png" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">2D Gaussian Splatting</h5>
+                            <p class="card-text">Explored Novel View Synthesis by comparing Neural Radiance Fields
+                                (NeRF)
+                                and 2D Gaussian Splatting (2DGS). Implemented 2DGS with features like Harris Corner
+                                detection for keypoint initialization and adaptive control of Gaussians, while the 2D
+                                NeRF
+                                model used a Multi-layer Perceptron to fit images.
+                            </p>
+                        </div>
+                        <div class="card-body d-flex align-items-end justify-content-around">
+                            <a href="https://cs184.mehvix.com/final/"
+                                style="color: inherit; text-decoration: inherit; display: inline-block; width: 100%;"
+                                target="_blank">
+                                <button type="button" class="w-100 mx-1 btn btn-outline-dark">
+                                    Project
+                                </button>
+                            </a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            <span class="badge" style="background-color: #083A42">C++</span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
         </div>
-    </div>
-
     </div>
 
     <div class="about-body mx-auto my-0" style="width: 100%; height: 100%; min-height: 100vh; ">

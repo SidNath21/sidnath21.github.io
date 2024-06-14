@@ -1,6 +1,7 @@
 body {
     margin: 0;
 }
+
 /* ---- particles.js container ---- */
 
 #particles-js canvas {
@@ -13,6 +14,7 @@ body {
     -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
     transition: opacity .8s ease, transform 1.4s ease
 }
+
 #particles-js {
     position: absolute;
     width: 100%;
@@ -65,8 +67,9 @@ body {
 
 .main-container {
     position: relative;
-    text-align:center;
+    text-align: center;
 }
+
 .main-description {
     position: relative;
     z-index: 1;
@@ -80,12 +83,12 @@ svg:hover {
     transition: linear 0.5s;
 }
 
-.downArrow{
-	position: relative;
-	top: calc(25vh);
+.downArrow {
+    position: relative;
+    top: calc(25vh);
 }
 
-.downArrow img{
+.downArrow img {
     border-radius: 50%;
 }
 
@@ -97,58 +100,81 @@ svg:hover {
 }
 
 .bounce {
-	-moz-animation: bounce 3s infinite;
-	-webkit-animation: bounce 3s infinite;
-	animation: bounce 3s infinite;
+    -moz-animation: bounce 3s infinite;
+    -webkit-animation: bounce 3s infinite;
+    animation: bounce 3s infinite;
 }
 
 @-moz-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -moz-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -moz-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-  60% {
-    -moz-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -moz-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    60% {
+        -moz-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
 }
+
 @-webkit-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-  60% {
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    60% {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
 }
+
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -moz-transform: translateY(-30px);
-    -ms-transform: translateY(-30px);
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-  60% {
-    -moz-transform: translateY(-15px);
-    -ms-transform: translateY(-15px);
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -moz-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    60% {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
 }
 
 body {
@@ -199,6 +225,7 @@ body {
     overflow: hidden;
     line-height: 1.25;
 }
+
 .css-typing p:nth-child(1) {
     width: 14ch;
     font-size: 4em;
@@ -236,9 +263,11 @@ body {
     0% {
         width: 0;
     }
+
     99.9% {
         border-right: 0.15em solid var(--bs-blue);
     }
+
     100% {
         border: none;
     }
@@ -248,9 +277,11 @@ body {
     0% {
         width: 0;
     }
+
     99.9% {
         border-right: 0.15em solid var(--bs-blue);
     }
+
     100% {
         border: none;
     }
@@ -260,12 +291,15 @@ body {
     0% {
         width: 0;
     }
+
     1% {
         opacity: 1;
     }
+
     99.9% {
         border-right: 0.15em solid orange;
     }
+
     100% {
         opacity: 1;
         border: none;
@@ -276,12 +310,15 @@ body {
     0% {
         width: 0;
     }
+
     1% {
         opacity: 1;
     }
+
     99.9% {
         border-right: 0.15em solid orange;
     }
+
     100% {
         opacity: 1;
         border: none;
@@ -292,9 +329,11 @@ body {
     0% {
         width: 0;
     }
+
     1% {
         opacity: 1;
     }
+
     100% {
         opacity: 1;
     }
@@ -304,9 +343,11 @@ body {
     0% {
         width: 0;
     }
+
     1% {
         opacity: 1;
     }
+
     100% {
         opacity: 1;
     }
@@ -317,6 +358,7 @@ body {
         border-color: transparent;
     }
 }
+
 @-webkit-keyframes blink {
     50% {
         border-color: tranparent;
@@ -327,14 +369,17 @@ body {
     .css-typing p:nth-child(1) {
         font-size: 3em;
     }
+
     .css-typing p:nth-child(2) {
         font-size: 2.5em;
     }
 }
+
 @media screen and (max-width: 800px) {
     .css-typing p:nth-child(1) {
         font-size: 2.5em;
     }
+
     .css-typing p:nth-child(2) {
         font-size: 1.75em;
     }
@@ -344,6 +389,7 @@ body {
     .css-typing p:nth-child(1) {
         font-size: 2.5em;
     }
+
     .css-typing p:nth-child(2) {
         white-space: initial !important;
         width: 11ch;
@@ -389,7 +435,7 @@ code {
     transition: 0.5s linear;
     /* opacity: 0; */
     visibility: hidden;
-    transition: opacity 500ms ease, visibility 500ms ease;  
+    transition: opacity 500ms ease, visibility 500ms ease;
 }
 
 .navbar.active {
@@ -397,9 +443,33 @@ code {
     visibility: visible;
 }
 
-.carousel-item{ height:75vh;}
+.carousel-item {
+    height: 75vh;
+}
 
 .carousel-item img {
     width: 100%;
     height: 100% !important;
-    object-fit: cover;}
+    object-fit: cover;
+}
+/* 
+ .bttn {
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #F1F1F1;
+    transition: 0.25s linear;
+    border-width: 0;
+} */
+
+.bttn {
+    background-color: #e3e1e1;
+}
+
+/* .bttn:hover {
+    background-color: #d7d6d6;
+}  */
+
+.btn-active {
+    background-color: #474D5A;
+    color: white;
+}

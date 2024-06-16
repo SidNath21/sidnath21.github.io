@@ -49,7 +49,7 @@ window.addEventListener('scroll', debounce(checkPosition));
 document.addEventListener('DOMContentLoaded', () => {
   const projectBody = document.getElementById('project-body');
   const filterButtonsContainer = document.getElementById('filter-buttons');
-  const categories = ["All", "Fullstack/Web Dev", "Computer Vision", "Computer Graphics", "Data Science"];
+  const categories = ["All", "Fullstack/Web Dev", "Computer Vision", "Computer Graphics", "Data Science/ML"];
 
   categories.forEach(category => {
     const button = document.createElement('button');
@@ -100,7 +100,7 @@ const projects = [
         buttonDisabled: true,
         buttonLink: "#",
         columnClass: "col-lg-4",
-        categories: ["Data Science"]
+        categories: ["Data Science/ML"]
     },
     {
         imgSrc: "images/walmart.png",
@@ -122,7 +122,7 @@ const projects = [
         buttonDisabled: false,
         buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj5/sidnath/submission/",
         columnClass: "col-lg-4",
-        categories: ["Computer Graphics"]
+        categories: ["Data Science/ML"]
     },
     {
         imgSrc: "images/berkeley_starry_night.jpg",
@@ -133,7 +133,7 @@ const projects = [
         buttonDisabled: false,
         buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj6/sidnath/submission/",
         columnClass: "col-lg-4",
-        categories: ["Computer Graphics"]
+        categories: ["Data Science/ML"]
     },
     {
         imgSrc: "images/ezgif.com-gif-to-mp4-converted.gif",
@@ -155,7 +155,7 @@ const projects = [
         buttonDisabled: false,
         buttonLink: "https://github.com/akansal2/saas-aisle-fa22",
         columnClass: "col-lg-4",
-        categories: ["Data Science"]
+        categories: ["Data Science/ML"]
     },
     {
         imgSrc: "images/face-in-toast.jpg",
@@ -166,7 +166,7 @@ const projects = [
         buttonDisabled: false,
         buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj6/sidnath/submission/",
         columnClass: "col-lg-4",
-        categories: ["Computer Graphics"]
+        categories: ["Data Science/ML"]
     },
     {
         imgSrc: "images/midway_face.jpg",
@@ -177,7 +177,7 @@ const projects = [
         buttonDisabled: false,
         buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj3/sidnath/submission/",
         columnClass: "col-lg-4",
-        categories: ["Computer Vision"]
+        categories: ["Computer Vision", "Data Science/ML"]
     },
     {
         imgSrc: "images/top_add_node.png",
@@ -199,7 +199,7 @@ const projects = [
         buttonDisabled: false,
         buttonLink: "https://github.com/SidNath21/saas-embedur",
         columnClass: "col-lg-4",
-        categories: ["Data Science"]
+        categories: ["Data Science/ML"]
     },
     {
         imgSrc: "images/capitalone.png",
@@ -232,7 +232,7 @@ const projects = [
         buttonDisabled: false,
         buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj1/sidnath/submission/",
         columnClass: "col-lg-4",
-        categories: ["Computer Graphics"]
+        categories: ["Data Science/ML", "Computer Vision"]
     },
     {
         imgSrc: "images/final_oraple.jpg",
@@ -243,7 +243,7 @@ const projects = [
         buttonDisabled: false,
         buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj2/sidnath/submission/",
         columnClass: "col-lg-4",
-        categories: ["Computer Graphics"]
+        categories: ["Data Science/ML", "Computer Vision"]
     },
     {
         imgSrc: "images/view1_view2_blended.jpg",
@@ -254,7 +254,7 @@ const projects = [
         buttonDisabled: false,
         buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj4B/sidnath/submission/",
         columnClass: "col-lg-4",
-        categories: ["Computer Graphics"]
+        categories: ["Computer Vision"]
     },
     {
         imgSrc: "images/cs184_proj4.png",
@@ -309,7 +309,7 @@ const projects = [
         buttonDisabled: false,
         buttonLink: "https://cs184.mehvix.com/final/",
         columnClass: "col-lg-4",
-        categories: ["Computer Graphics", "Computer Vision"]
+        categories: ["Data Science/ML", "Computer Vision", "Computer Graphics"]
     }
 ];
 

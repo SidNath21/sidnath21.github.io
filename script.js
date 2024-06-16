@@ -74,19 +74,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const badgeColors = {
-    "Python": "#083A42",
-    "Scala": "hsl(144, 95%, 45%)",
-    "PyTorch": "#06c4e2",
-    "Databricks": "#8a06e2",
-    "AWS": "#8a06e2",
-    "YOLOv8": "hsl(144, 95%, 45%)",
-    "DeepSORT": "#06c4e2",
-    "Roboflow": "#8a06e2",
-    "Keras": "#e45000",
-    "Sklearn": "#4800e4",
-    "Word2Vec": "#e40000",
+    "Python": "#6EA4BF",
+    "Scala": "#C78283",
+    "PyTorch": "#465775",
+    "Databricks": "#F3D9DC",
+    "AWS": "#B49286",
+    "Keras": "#93A8AC",
+    "Sklearn": "#38405F",
+    "Word2Vec": "#59546C",
     "Vue.js": "#21601c",
-    "Firebase": "#c44e00",
+    "Firebase": "#F2545B",
     "C++": "#083A42"
 };
 
@@ -106,7 +103,7 @@ const projects = [
         imgSrc: "images/walmart.png",
         title: "Walmart - Computer Vision Internship",
         text: "Automating Walmart's Supply Chain by using Object Detection (YOLOv8) and Object Tracking (DeepSORT) to count and keep track of objects on warehouse pallets.",
-        badges: ["Python", "YOLOv8", "DeepSORT", "Roboflow"],
+        badges: ["Python"],
         buttonText: "Project",
         buttonDisabled: true,
         buttonLink: "#",

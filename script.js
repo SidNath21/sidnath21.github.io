@@ -93,7 +93,7 @@ const projects = [
         title: "The Trade Desk - Data Science Internship",
         text: "Enhanced deep learning click-through rate (CTR) prediction models by integrating user data features, optimizing low-latency advertisement bidding algorithms to analyze 13 million advertising impressions every second.",
         badges: ["Python", "Scala", "PyTorch", "Databricks", "AWS"],
-        buttonText: "Project",
+        buttonText: "Project Not Publicly Accessible",
         buttonDisabled: true,
         buttonLink: "#",
         columnClass: "col-lg-4",

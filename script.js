@@ -104,7 +104,7 @@ const projects = [
         title: "Walmart - Computer Vision Internship",
         text: "Automating Walmart's Supply Chain by using Object Detection (YOLOv8) and Object Tracking (DeepSORT) to count and keep track of objects on warehouse pallets.",
         badges: ["Python"],
-        buttonText: "Project",
+        buttonText: "Project Not Publicly Accessible",
         buttonDisabled: true,
         buttonLink: "#",
         columnClass: "col-lg-4",
@@ -166,7 +166,7 @@ const projects = [
         categories: ["Data Science/ML"]
     },
     {
-        imgSrc: "images/midway_face.jpg",
+        imgSrc: "images/sid_george_gif.mp4",
         title: "Face Morphing",
         text: "Used Delaunay triangulation and affine transformations to morph faces!",
         badges: ["Python"],
@@ -203,7 +203,7 @@ const projects = [
         title: "Capital One - SWE Internship",
         text: "An automation testing tool that helps create and run test scenarios for Amazon Kinesis data streaming applications.",
         badges: ["Vue.js", "AWS"],
-        buttonText: "Project",
+        buttonText: "Project Not Publicly Accessible",
         buttonDisabled: true,
         buttonLink: "#",
         columnClass: "col-lg-6",
@@ -350,14 +350,20 @@ const projects = [
         a.style.textDecoration = 'inherit';
         a.style.display = 'inline-block';
         a.style.width = '100%';
-        a.href = project.buttonLink;
+        if (!project.buttonDisabled) {
+          a.href = project.buttonLink;
+        }
         a.target = '_blank';
 
         const button = document.createElement('button');
         button.type = 'button';
         button.className = 'w-100 mx-1 btn btn-outline-dark';
         button.textContent = project.buttonText;
-        if (project.buttonDisabled) button.disabled = true;
+        if (project.buttonDisabled) {
+          button.disabled = true;
+          button.style.pointerEvents = "none";
+          button.setAttribute('aria-disabled', true);
+        }
 
         a.appendChild(button);
         cardFooterDiv.appendChild(a);

@@ -117,7 +117,7 @@ const projects = [
         badges: ["Python", "PyTorch"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj5/sidnath/submission/",
+        buttonLink: "https://sidnath21.github.io/cs180-websites/project5/",
         columnClass: "col-lg-4",
         categories: ["Data Science/ML"]
     },
@@ -128,7 +128,7 @@ const projects = [
         badges: ["Python", "PyTorch"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj6/sidnath/submission/",
+        buttonLink: "https://sidnath21.github.io/cs180-websites/final_project/",
         columnClass: "col-lg-4",
         categories: ["Data Science/ML"]
     },
@@ -227,7 +227,7 @@ const projects = [
         badges: ["Python"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj1/sidnath/submission/",
+        buttonLink: "https://sidnath21.github.io/cs180-websites/project1/",
         columnClass: "col-lg-4",
         categories: ["Data Science/ML", "Computer Vision"]
     },
@@ -238,7 +238,7 @@ const projects = [
         badges: ["Python"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj2/sidnath/submission/",
+        buttonLink: "https://sidnath21.github.io/cs180-websites/project2/",
         columnClass: "col-lg-4",
         categories: ["Data Science/ML", "Computer Vision"]
     },
@@ -249,7 +249,7 @@ const projects = [
         badges: ["Python"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj4B/sidnath/submission/",
+        buttonLink: "https://sidnath21.github.io/cs180-websites/project4/",
         columnClass: "col-lg-4",
         categories: ["Computer Vision"]
     },
@@ -271,7 +271,7 @@ const projects = [
         badges: ["C++"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://cal-cs184-student.github.io/hw-webpages-sp24-SidNath21/hw3/index.html",
+        buttonLink: "https://sidnath21.github.io/cs180-websites/project3/",
         columnClass: "col-lg-4",
         categories: ["Computer Graphics"]
     },
@@ -298,15 +298,26 @@ const projects = [
         categories: ["Computer Graphics"]
     },
     {
-        imgSrc: "images/2dgs2.png",
+        imgSrc: "images/fox_2dgs.mp4",
         title: "2D Gaussian Splatting",
         text: "Explored Novel View Synthesis by comparing Neural Radiance Fields (NeRF) and 2D Gaussian Splatting (2DGS). Implemented 2DGS with features like Harris Corner detection for keypoint initialization and adaptive control of Gaussians, while the 2D NeRF model used a Multi-layer Perceptron to fit images.",
         badges: ["C++"],
         buttonText: "Project",
         buttonDisabled: false,
         buttonLink: "https://cs184.mehvix.com/final/",
-        columnClass: "col-lg-4",
+        columnClass: "col-lg-6",
         categories: ["Data Science/ML", "Computer Vision", "Computer Graphics"]
+    },
+    {
+        imgSrc: "images/musicgen.png",
+        title: "Riff - Audio Generation Tools for Music Producers",
+        text: "Evaluated audio generation models, including Meta’s MusicGen, and performed prompt tuning to improve audio generation capabilities for Riff, a Copilot for music producers. Implemented a semi-supervised MIDI labeling pipeline to develop a MIDI-based genre classification model with Random Forests.",
+        badges: ["Python", "PyTorch"],
+        buttonText: "Project",
+        buttonDisabled: false,
+        buttonLink: "https://drive.google.com/file/d/1iHeEYQ3hONTTghN33rqgzATmMlqj1k2X/view?usp=sharing",
+        columnClass: "col-lg-4",
+        categories: ["Data Science/ML"]
     }
 ];
 

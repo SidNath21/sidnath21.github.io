@@ -6,45 +6,35 @@ particlesJS.load('particles-js', 'particles.json', function () {
 
 let scrollPos = 0;
 const nav = document.getElementById('navbar');
+const NAVBAR_THRESHOLD = 100; // Pixels after viewport height to show navbar
 let windowHeight = window.innerHeight;
-let navHeight = nav.innerHeight;
 
-
-
-function checkPosition() {
-  let windowY = window.scrollY;
-  if (windowY < windowHeight + 100) {
-    // Scrolling UP
-    nav.style.visibility = "hidden"
-    // nav.classList.toggle("active");
-  } else {
-    // Scrolling DOWN
-    nav.style.visibility = "visible"
-    // nav.classList.toggle("active");
-  }
-  scrollPos = windowY;
+function updateNavbarVisibility() {
+  const shouldShowNavbar = window.scrollY > (windowHeight + NAVBAR_THRESHOLD);
+  nav.classList.toggle('visible', shouldShowNavbar);
 }
 
-function debounce(func, wait = 0, immediate = true) {
+// Efficient debounce implementation
+function debounce(func, wait = 10) {
   let timeout;
-  return function () {
-    let context = this, args = arguments;
-    let later = function () {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
+  return function executedFunction() {
+    const later = () => {
+      clearTimeout(timeout);
+      func();
     };
-    let callNow = immediate && !timeout;
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
   };
-};
+}
 
-window.addEventListener('scroll', debounce(checkPosition));
+window.addEventListener('scroll', debounce(updateNavbarVisibility));
+window.addEventListener('resize', () => {
+  windowHeight = window.innerHeight;
+  updateNavbarVisibility();
+});
 
-
-
-
+// Initial check
+updateNavbarVisibility();
 
 document.addEventListener('DOMContentLoaded', () => {
   const projectBody = document.getElementById('project-body');
@@ -369,7 +359,7 @@ const projects = [
     {
         imgSrc: "images/musicgen.png",
         title: "Riff - Audio Generation Tools for Music Producers",
-        text: "Evaluated audio generation models, including Meta’s MusicGen, and performed prompt tuning to improve audio generation capabilities for Riff, a Copilot for music producers. Implemented a semi-supervised MIDI labeling pipeline to develop a MIDI-based genre classification model with Random Forests.",
+        text: "Evaluated audio generation models, including Meta's MusicGen, and performed prompt tuning to improve audio generation capabilities for Riff, a Copilot for music producers. Implemented a semi-supervised MIDI labeling pipeline to develop a MIDI-based genre classification model with Random Forests.",
         badges: ["Python", "PyTorch"],
         buttonText: "Project",
         buttonDisabled: false,
@@ -457,6 +447,23 @@ const projects = [
         colDiv.appendChild(cardDiv);
         projectBody.appendChild(colDiv);
     });
+
+    // Set up intersection observer for animations
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Once the animation is done, we can stop observing the element
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1, // Trigger when at least 10% of the element is visible
+        rootMargin: '50px' // Start animation slightly before the element enters the viewport
+    });
+
+    cards.forEach(card => observer.observe(card));
 }
 
 

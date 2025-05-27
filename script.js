@@ -49,7 +49,7 @@ window.addEventListener('scroll', debounce(checkPosition));
 document.addEventListener('DOMContentLoaded', () => {
   const projectBody = document.getElementById('project-body');
   const filterButtonsContainer = document.getElementById('filter-buttons');
-  const categories = ["All", "Fullstack/Web Dev", "Computer Vision", "Computer Graphics", "Data Science/ML"];
+  const categories = ["All", "Fullstack/Web Dev", "Computer Vision", "Computer Graphics", "Data Science/ML", "Robotics"];
 
   categories.forEach(category => {
     const button = document.createElement('button');
@@ -84,7 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "Word2Vec": "#59546C",
     "Vue.js": "#21601c",
     "Firebase": "#F2545B",
-    "C++": "#083A42"
+    "C++": "#083A42",
+    "ROS": "rgb(36, 37, 93)"
 };
 
 const projects = [
@@ -133,16 +134,73 @@ const projects = [
         categories: ["Data Science/ML"]
     },
     {
-        imgSrc: "images/ezgif.com-gif-to-mp4-converted.gif",
-        title: "Woflow - Computer Vision Internship",
-        text: "Designed algorithms to fix image distortions and digitize restaurant menus, enhancing menu accessibility and enabling clients to make data-driven decisions for optimizing menus and uncovering customer preferences.",
-        badges: ["Python", "PyTorch"],
+        imgSrc: "images/eecs106b_proj1.png",
+        title: "Visual Servoing",
+        text: "In EECS 106B Project 1, we implemented visual servoing on the Sawyer robotic arm using a closed-loop controller. This project was a good introduction to full-stack robotics as we implemented perception, planning, and control algorithms.",
+        badges: ["Python", "ROS"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://github.com/vraman23/SAAS-Woflow/",
+        buttonLink: "https://drive.google.com/file/d/1_xl4lE7YZP0TngLjnpd-jFNQs9YLG1L9/view?usp=sharing",
         columnClass: "col-lg-4",
-        categories: ["Computer Vision"]
+        categories: ["Robotics"]
     },
+    {
+        imgSrc: "images/eecs106b_proj2.png",
+        title: "Nonholonomic Control -- Path Planning",
+        text: "In EECS 106B Project 2, we explored path planning for a front-wheel steering car, a second-order nonholonomic system. We implemented three path planning algorithms: an optimization-based planner, a rapidly-exploring random tree (RRT) algorithm, and a sinusoidal steering method.",
+        badges: ["Python", "ROS"],
+        buttonText: "Project",
+        buttonDisabled: false,
+        buttonLink: "https://drive.google.com/file/d/1jGOedQ2y4cQc9q9WBSWymlwH3TbIL86N/view?usp=sharing",
+        columnClass: "col-lg-4",
+        categories: ["Robotics"]
+    },
+    {
+        imgSrc: "images/eecs106b_proj3.png",
+        title: "State Estimation",
+        text: "In this project, we implemented three state estimation techniques: Dead Reckoning, Kalman Filter (KF), and Extended Kalman Filter (EKF). First, we used Dead Reckoning and KF to estimate the state of the Turtlebot robot. Next, we used Dead Reckoning and EKF to estimate the state of a more complicated planar quadrotor robot.",
+        badges: ["Python", "ROS"],
+        buttonText: "Project",
+        buttonDisabled: false,
+        buttonLink: "https://drive.google.com/file/d/1cbNYFy-Hqx8V9D9DmrmKfmmguTV2uepe/view?usp=sharing",
+        columnClass: "col-lg-4",
+        categories: ["Robotics"]
+    },
+    {
+        imgSrc: "images/eecs106b_proj4.png",
+        title: "Multifingered Grasping using Dexterous Hands in MuJoCo",
+        text: "In this project, we developed a grasping pipeline for an Allegro multifingered hand mounted on a Sawyer robotic arm within the MuJoCo simulator. Our approach combines a Levenberg-Marquardt based inverse kinematics (IK) solver for calculating joint angles and a gradient-based grasp synthesis algorithm for achieving force closure.",
+        badges: ["Python"],
+        buttonText: "Project",
+        buttonDisabled: false,
+        buttonLink: "https://drive.google.com/file/d/1ybESjrOR6fK_F-mGCyeLHoR4SFmJ8Jys/view?usp=sharing",
+        columnClass: "col-lg-4",
+        categories: ["Robotics"]
+    },
+
+     {
+        imgSrc: "images/eecs106b_proj5.png",
+        title: "Drone Flight with Vision-Language Models",
+        text: "In this project, we follow the Agilicious framework (an open-source and open-hardware framework for agile drone flight) and implement a Vision Language Model control-based policy in simulation.",
+        badges: ["Python", "ROS"],
+        buttonText: "Project",
+        buttonDisabled: false,
+        buttonLink: "https://drive.google.com/file/d/1bTRbHWvK34CK515wtVo9Uxc4frYkHaIS/view?usp=sharing",
+        columnClass: "col-lg-4",
+        categories: ["Robotics"]
+    },
+
+    {
+      imgSrc: "images/ezgif.com-gif-to-mp4-converted.gif",
+      title: "Woflow - Computer Vision Internship",
+      text: "Designed algorithms to fix image distortions and digitize restaurant menus, enhancing menu accessibility and enabling clients to make data-driven decisions for optimizing menus and uncovering customer preferences.",
+      badges: ["Python", "PyTorch"],
+      buttonText: "Project",
+      buttonDisabled: false,
+      buttonLink: "https://github.com/vraman23/SAAS-Woflow/",
+      columnClass: "col-lg-4",
+      categories: ["Computer Vision"]
+  },
     {
         imgSrc: "images/w2v2.png",
         title: "Aisle - Data Science (ML/NLP) Internship",
@@ -161,7 +219,7 @@ const projects = [
         badges: ["Python"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj6/sidnath/submission/",
+        buttonLink: "https://sidnath21.github.io/cs180-websites/final_project/",
         columnClass: "col-lg-4",
         categories: ["Data Science/ML"]
     },
@@ -172,7 +230,7 @@ const projects = [
         badges: ["Python"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj3/sidnath/submission/",
+        buttonLink: "https://sidnath21.github.io/cs180-websites/project3/",
         columnClass: "col-lg-4",
         categories: ["Computer Vision", "Data Science/ML"]
     },
@@ -271,7 +329,7 @@ const projects = [
         badges: ["C++"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://sidnath21.github.io/cs180-websites/project3/",
+        buttonLink: "https://cal-cs184-student.github.io/hw-webpages-sp24-SidNath21/hw3/index.html",
         columnClass: "col-lg-4",
         categories: ["Computer Graphics"]
     },

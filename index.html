@@ -42,7 +42,7 @@
             <div class="container">
                 <!-- container-fluid -->
 
-                <a class="navbar-brand" href="#" onClick="document.getElementById('home').scrollIntoView({ behavior: 'smooth' }); return false;">Siddharth Nath</a>
+                <a class="navbar-brand" href="/">Siddharth Nath</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -56,11 +56,11 @@
                             </span>
                         </li>
                         <li class="nav-item nav-link link"
-                            onClick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });" @click="updateNavItem(3)">
+                            onClick="window.location.href='/#projects';" @click="updateNavItem(3)">
                             <span>Work</span>
                         </li>
-                        <li class="nav-item nav-link link" onClick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });"
-                            @click="updateNavItem(2)">
+                        <li class="nav-item nav-link link"
+                            @click="updateNavItem(2)" onClick="window.location.href='/#about';">
                             <span>About</span>
                         </li>
                         <li class="nav-item nav-link link" onClick="showBlogSection();">
@@ -111,16 +111,16 @@
             <div class="mx-auto">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                     <button class="btn btn-lg btn-outline-primary me-md-2" type="button"
-                        onClick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });"> Projects </button>
+                        onClick="window.location.href='/#projects';"> Projects </button>
                     <button class=" btn btn-lg btn-outline-primary" type="button"
-                        onClick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });"> About Me </button>
+                        onClick="window.location.href='/#about';"> About Me </button>
                 </div>
 
             </div>
 
 
             <div class="downArrow bounce">
-                <img onClick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });" width="40" height="40" alt=""
+                <img onClick="window.location.href='/#projects';" width="40" height="40" alt=""
                     src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiBoZWlnaHQ9IjMycHgiIGlkPSLQodC70L7QuV8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yNC4yODUsMTEuMjg0TDE2LDE5LjU3MWwtOC4yODUtOC4yODhjLTAuMzk1LTAuMzk1LTEuMDM0LTAuMzk1LTEuNDI5LDAgIGMtMC4zOTQsMC4zOTUtMC4zOTQsMS4wMzUsMCwxLjQzbDguOTk5LDkuMDAybDAsMGwwLDBjMC4zOTQsMC4zOTUsMS4wMzQsMC4zOTUsMS40MjgsMGw4Ljk5OS05LjAwMiAgYzAuMzk0LTAuMzk1LDAuMzk0LTEuMDM2LDAtMS40MzFDMjUuMzE5LDEwLjg4OSwyNC42NzksMTAuODg5LDI0LjI4NSwxMS4yODR6IiBmaWxsPSIjMTIxMzEzIiBpZD0iRXhwYW5kX01vcmUiLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48L3N2Zz4=" />
             </div>
 

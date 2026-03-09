@@ -182,32 +182,169 @@ body {
     /* background-color: white; */
 }
 
-.card {
+/* Minimal full-width project rows */
+#project-body .project-row-card {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.45s ease, transform 0.45s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    border: 1px solid #e8eaed !important;
+    border-radius: 10px !important;
+    background: #fff;
+    overflow: hidden;
 }
 
-.card.visible {
+#project-body .project-row-card.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.card:hover {
-    border: 1px solid black;
-    transition: 0.25s linear;
-    box-shadow: 0 0 10px 0 rgba(100, 100, 100, 1);
-    opacity: 90%;
+#project-body .project-row-card:hover {
+    border-color: #d3d8df !important;
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.08);
 }
 
-.card-img-top {
+.project-row-content {
+    display: flex;
+    align-items: stretch;
+    min-height: 160px;
+}
+
+.project-row-media {
+    flex: 0 0 240px;
+    max-width: 240px;
+    background: #f4f6f8;
+}
+
+.project-media {
     width: 100%;
-    height: 25vw;
+    height: 100%;
+    min-height: 160px;
     object-fit: cover;
+    display: block;
+}
+
+.project-row-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.85rem;
+    padding: 1rem 1.2rem;
+    min-width: 0;
+    width: 100%;
+}
+
+.project-row-main .card-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+}
+
+.project-row-text {
+    margin-bottom: 0;
+    color: #4b5563;
+    line-height: 1.45;
+}
+
+.project-row-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 0.25rem;
+}
+
+.project-row-badges {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-row-badges .badge {
+    transition: transform 0.25s ease;
+}
+
+.project-row-card:hover .project-row-badges .badge {
+    transform: translateY(-1px);
+}
+
+.project-row-btn {
+    white-space: nowrap;
+    min-width: 110px;
+}
+
+@media screen and (max-width: 992px) {
+    .project-row-content {
+        min-height: 140px;
+    }
+
+    .project-row-media {
+        flex-basis: 200px;
+        max-width: 200px;
+    }
+
+    .project-media {
+        min-height: 140px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .project-row-content {
+        flex-direction: column;
+    }
+
+    .project-row-media {
+        flex-basis: auto;
+        max-width: 100%;
+    }
+
+    .project-media {
+        min-height: 170px;
+    }
+
+    .project-row-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 .project-body {
     background-color: #F8F9FA;
+}
+
+/* Smooth filtering animation */
+#project-body {
+    transition: opacity 0.3s ease;
+}
+
+#project-body.filtering {
+    opacity: 0.5;
+}
+
+/* Project section title animation */
+.project-overview h1 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keep project action button feedback subtle */
+.project-row-btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-row-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(17, 24, 39, 0.15);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
 }
 
 .about-body {
@@ -472,29 +609,57 @@ code {
     border-width: 0;
 } */
 
+/* Enhanced filter buttons with better animations */
+#filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 3rem;
+    padding: 1rem 0;
+}
+
 .bttn.btn {
     background-color: #e3e1e1 !important;
-    transition: all 0.25s ease-in-out !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     border: none !important;
     transform: scale(1) !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 25px !important;
+    font-weight: 500 !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.bttn.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(71, 77, 90, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.bttn.btn:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .bttn.btn:not(.btn-active):hover {
     background-color: #c4c4c4 !important;
-    transform: scale(1.05) !important;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 .btn-active.bttn.btn {
     background-color: #474D5A !important;
     color: white !important;
     pointer-events: none !important;
-}
-
-.btn-active.bttn.btn {
-    background-color: #474D5A !important;
-    color: white !important;
-    pointer-events: none !important;
+    box-shadow: 0 4px 12px rgba(71, 77, 90, 0.3) !important;
 }
 
 .links a {
@@ -510,4 +675,63 @@ code {
 .links svg {
     fill: var(--icon-color);
     transition: fill 0.3s ease;
+}
+
+/* Blog section styles */
+.blog-body {
+    background-color: #F8F9FA;
+    min-height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    position: relative;
+}
+
+.blog-body.visible {
+    opacity: 1;
+    visibility: visible;
+    display: block !important;
+}
+
+.blog-post-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.blog-post-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.blog-post-date {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.blog-post-tags .badge {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+}
+
+.blog-post-card:hover .blog-post-tags .badge {
+    transform: translateY(-2px);
+}
+
+.blog-overview h1 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
 }

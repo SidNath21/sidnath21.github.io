@@ -375,111 +375,252 @@ const projects = [
   function displayProjects(projects) {
     const projectBody = document.getElementById('project-body');
     projectBody.innerHTML = ''; // Clear existing projects
-    projects.forEach(project => {
+    
+    projects.forEach((project) => {
         const colDiv = document.createElement('div');
-        colDiv.className = `${project.columnClass} col-md-6 col-sm-12 mb-4 d-flex align-items-stretch`;
+        colDiv.className = 'col-12 mb-3';
 
         const cardDiv = document.createElement('div');
-        cardDiv.className = 'card';
+        cardDiv.className = 'card project-row-card'; // Start without visible class
 
-        const img = document.createElement('img');
-        img.src = project.imgSrc;
-        img.className = 'card-img-top';
-        img.alt = '...';
+        const rowContent = document.createElement('div');
+        rowContent.className = 'project-row-content';
+
+        const mediaWrapper = document.createElement('div');
+        mediaWrapper.className = 'project-row-media';
+
+        // Handle both images and videos
+        if (project.imgSrc.endsWith('.mp4')) {
+            const video = document.createElement('video');
+            video.src = project.imgSrc;
+            video.className = 'project-media';
+            video.alt = project.title;
+            video.loop = true;
+            video.muted = true;
+            video.autoplay = true;
+            video.playsInline = true;
+            mediaWrapper.appendChild(video);
+        } else {
+            const img = document.createElement('img');
+            img.src = project.imgSrc;
+            img.className = 'project-media';
+            img.alt = project.title;
+            img.loading = 'lazy'; // Lazy loading for performance
+            mediaWrapper.appendChild(img);
+        }
 
         const cardBodyDiv = document.createElement('div');
-        cardBodyDiv.className = 'card-body d-flex flex-column';
+        cardBodyDiv.className = 'project-row-main';
 
         const h5 = document.createElement('h5');
         h5.className = 'card-title';
         h5.textContent = project.title;
 
         const p = document.createElement('p');
-        p.className = 'card-text';
+        p.className = 'card-text project-row-text';
         p.textContent = project.text;
 
         cardBodyDiv.appendChild(h5);
         cardBodyDiv.appendChild(p);
 
-        const cardFooterDiv = document.createElement('div');
-        cardFooterDiv.className = 'card-body d-flex align-items-end justify-content-around';
+        const cardFooter = document.createElement('div');
+        cardFooter.className = 'project-row-footer';
+
+        const badgeContainer = document.createElement('div');
+        badgeContainer.className = 'project-row-badges';
+
+        project.badges.forEach(badge => {
+            const span = document.createElement('span');
+            span.className = 'badge rounded-pill px-3 py-2';
+            span.style.backgroundColor = badgeColors[badge];
+            span.style.color = '#fff';
+            span.textContent = badge;
+            span.style.marginRight = '5px';
+            span.style.marginBottom = '5px';
+            badgeContainer.appendChild(span);
+        });
 
         const a = document.createElement('a');
         a.style.color = 'inherit';
         a.style.textDecoration = 'inherit';
-        a.style.display = 'inline-block';
-        a.style.width = '100%';
-        if (!project.buttonDisabled) {
-          a.href = project.buttonLink;
-        }
         a.target = '_blank';
+        if (!project.buttonDisabled) {
+            a.href = project.buttonLink;
+        }
 
         const button = document.createElement('button');
         button.type = 'button';
-        button.className = 'w-100 mx-1 btn btn-outline-dark';
+        button.className = 'btn btn-outline-dark project-row-btn';
         button.textContent = project.buttonText;
         if (project.buttonDisabled) {
-          button.disabled = true;
-          button.style.pointerEvents = "none";
-          button.setAttribute('aria-disabled', true);
+            button.disabled = true;
+            button.style.pointerEvents = 'none';
+            button.style.opacity = '0.6';
+            button.setAttribute('aria-disabled', true);
         }
 
         a.appendChild(button);
-        cardFooterDiv.appendChild(a);
-
-        const cardFooter = document.createElement('div');
-        cardFooter.className = 'card-footer text-body-secondary';
-
-        project.badges.forEach(badge => {
-            const span = document.createElement('span');
-            span.className = 'badge';
-            span.style.backgroundColor = badgeColors[badge];
-            span.textContent = badge;
-            span.style.marginRight = '5px'; // Adding right margin for spacing
-            span.style.marginBottom = '5px'; // Adding bottom margin for vertical spacing if badges wrap
-            cardFooter.appendChild(span);
-        });
-
-        cardDiv.appendChild(img);
-        cardDiv.appendChild(cardBodyDiv);
-        cardDiv.appendChild(cardFooterDiv);
-        cardDiv.appendChild(cardFooter);
+        cardFooter.appendChild(badgeContainer);
+        cardFooter.appendChild(a);
+        cardBodyDiv.appendChild(cardFooter);
+        rowContent.appendChild(mediaWrapper);
+        rowContent.appendChild(cardBodyDiv);
+        cardDiv.appendChild(rowContent);
         colDiv.appendChild(cardDiv);
         projectBody.appendChild(colDiv);
     });
 
-    // Set up intersection observer for animations
-    const cards = document.querySelectorAll('.card');
+    // Set up intersection observer with stagger effect
+    const cards = document.querySelectorAll('.project-row-card');
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Once the animation is done, we can stop observing the element
-                observer.unobserve(entry.target);
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }, index * 50); // Stagger the animation
             }
         });
     }, {
-        threshold: 0.1, // Trigger when at least 10% of the element is visible
-        rootMargin: '50px' // Start animation slightly before the element enters the viewport
+        threshold: 0.1,
+        rootMargin: '50px'
     });
 
-    cards.forEach(card => observer.observe(card));
+    cards.forEach(card => {
+        // Reset card state
+        card.classList.remove('visible');
+        observer.observe(card);
+    });
 }
 
 
   function filterProjects(filter) {
-    if (filter === "All") {
-        displayProjects(projects);
-        return;
-    }
-    else {
-
-      const filteredProjects = projects.filter(project =>
-          project.categories.includes(filter)
-      );
-      displayProjects(filteredProjects);
-    }
-
+    const projectBody = document.getElementById('project-body');
+    
+    // Add filtering class for opacity transition
+    projectBody.classList.add('filtering');
+    
+    setTimeout(() => {
+        let filteredProjects;
+        if (filter === "All") {
+            filteredProjects = projects;
+        } else {
+            filteredProjects = projects.filter(project =>
+                project.categories.includes(filter)
+            );
+        }
+        
+        displayProjects(filteredProjects);
+        
+        // Remove filtering class after a short delay
+        setTimeout(() => {
+            projectBody.classList.remove('filtering');
+        }, 50);
+    }, 300);
 }
+
+  // Blog/Notes section functionality
+  const blogPosts = [
+      // Add your blog posts here
+      // Example structure:
+      // {
+      //     title: "Understanding Neural Radiance Fields",
+      //     date: "2024-01-15",
+      //     excerpt: "A deep dive into how NeRFs work and their applications in 3D scene reconstruction...",
+      //     tags: ["Machine Learning", "Computer Vision", "NeRFs"],
+      //     category: "ML",
+      //     link: "#",
+      //     readTime: "5 min read"
+      // },
+  ];
+
+  function displayBlogPosts(posts = blogPosts) {
+      const blogContainer = document.getElementById('blog-posts');
+      if (!blogContainer) return;
+      
+      blogContainer.innerHTML = '';
+      
+      if (posts.length === 0) {
+          blogContainer.innerHTML = `
+              <div class="col-12 text-center py-5">
+                  <p class="lead">Coming soon! Check back later for blog posts and notes.</p>
+              </div>
+          `;
+          return;
+      }
+      
+      posts.forEach((post, index) => {
+          const colDiv = document.createElement('div');
+          colDiv.className = 'col-lg-4 col-md-6 col-sm-12 mb-4';
+          
+          const cardDiv = document.createElement('div');
+          cardDiv.className = 'blog-post-card card h-100';
+          
+          const date = new Date(post.date).toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+          });
+          
+          cardDiv.innerHTML = `
+              <div class="card-body d-flex flex-column">
+                  <div class="blog-post-date mb-2">${date}</div>
+                  <h5 class="card-title">${post.title}</h5>
+                  <p class="card-text flex-grow-1">${post.excerpt}</p>
+                  <div class="blog-post-tags mb-3">
+                      ${post.tags.map(tag => `<span class="badge bg-secondary">${tag}</span>`).join('')}
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                      <small class="text-muted">${post.readTime}</small>
+                      <a href="${post.link}" class="btn btn-sm btn-outline-primary">Read More →</a>
+                  </div>
+              </div>
+          `;
+          
+          colDiv.appendChild(cardDiv);
+          blogContainer.appendChild(colDiv);
+          
+          // Add intersection observer for animation
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      setTimeout(() => {
+                          entry.target.classList.add('visible');
+                          observer.unobserve(entry.target);
+                      }, index * 100);
+                  }
+              });
+          }, { threshold: 0.1, rootMargin: '50px' });
+          
+          observer.observe(cardDiv);
+      });
+  }
+
+  // Function to show blog section
+  function showBlogSection() {
+      const blogSection = document.getElementById('blog');
+      if (!blogSection) return;
+      
+      // Show the blog section
+      blogSection.style.display = 'block';
+      
+      // Add visible class after a short delay for smooth transition
+      setTimeout(() => {
+          blogSection.classList.add('visible');
+          
+          // Scroll to blog section smoothly
+          blogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          
+          // Initialize blog posts if not already loaded
+          if (document.getElementById('blog-posts').innerHTML === '') {
+              displayBlogPosts();
+          }
+      }, 50);
+  }
+
+  // Initialize blog section (but keep it hidden)
+  if (document.getElementById('blog-posts')) {
+      // Blog posts will be loaded when section is shown
+  }
 
 });

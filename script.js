@@ -117,7 +117,7 @@ const projects = [
     {
         imgSrc: "images/diffusion_ep0_130000.mp4",
         title: "Imitation Learning",
-        text: "Implemented imitation learning methods for robotic control by training policies from expert demonstrations and evaluating behavior across challenging control tasks.",
+        text: "Implemented imitation learning methods to solve Push-T environment using methods like Flow Matching and Diffusion Policy.",
         badges: ["Python", "PyTorch"],
         buttonText: "Project",
         buttonDisabled: false,

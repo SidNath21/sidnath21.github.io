@@ -79,6 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
 };
 
 const projects = [
+
+    
     {
         imgSrc: "images/deepfm2.png",
         title: "The Trade Desk - Data Science Internship",
@@ -100,6 +102,28 @@ const projects = [
         buttonLink: "#",
         columnClass: "col-lg-4",
         categories: ["Computer Vision"]
+    },
+    {
+        imgSrc: "images/diffusion_process_cc_epoch_20.mp4",
+        title: "Denoising Diffusion Probabilistic Models",
+        text: "Built and trained diffusion models for image generation, including UNet-based denoising and iterative reverse sampling to synthesize high-quality images from noise.",
+        badges: ["Python", "PyTorch"],
+        buttonText: "Project",
+        buttonDisabled: false,
+        buttonLink: "https://sidnath21.github.io/cs180-websites/diffusion_project/",
+        columnClass: "col-lg-4",
+        categories: ["Data Science/ML", "Computer Vision"]
+    },
+    {
+        imgSrc: "images/diffusion_ep0_130000.mp4",
+        title: "Imitation Learning",
+        text: "Implemented imitation learning methods for robotic control by training policies from expert demonstrations and evaluating behavior across challenging control tasks.",
+        badges: ["Python", "PyTorch"],
+        buttonText: "Project",
+        buttonDisabled: false,
+        buttonLink: "https://sidnath21.github.io/rl-websites/imitation-learning/",
+        columnClass: "col-lg-4",
+        categories: ["Robotics", "Data Science/ML"]
     },
     {
         imgSrc: "images/nerf_6400.gif",
@@ -367,17 +391,7 @@ const projects = [
         columnClass: "col-lg-4",
         categories: ["Data Science/ML"]
     },
-    {
-        imgSrc: "images/diffusion_process_cc_epoch_20.mp4",
-        title: "Denoising Diffusion Probabilistic Models",
-        text: "Built and trained diffusion models for image generation, including UNet-based denoising and iterative reverse sampling to synthesize high-quality images from noise.",
-        badges: ["Python", "PyTorch"],
-        buttonText: "Project",
-        buttonDisabled: false,
-        buttonLink: "https://sidnath21.github.io/cs180-websites/diffusion_project/",
-        columnClass: "col-lg-4",
-        categories: ["Data Science/ML", "Computer Vision"]
-    }
+    
 ];
 
   // Display all projects initially

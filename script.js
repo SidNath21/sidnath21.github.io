@@ -126,6 +126,17 @@ const projects = [
         categories: ["Robotics", "Data Science/ML"]
     },
     {
+        imgSrc: "images/lunar_lander.mp4",
+        title: "Policy Gradients",
+        text: "Implemented policy-gradient (REINFORCE-style) models on Gymnasium control tasks (CartPole, HalfCheetah, LunarLander, InvertedPendulum), with variance-reduction techniques including reward-to-go, neural network baselines, and GAE.",
+        badges: ["Python", "PyTorch"],
+        buttonText: "Project",
+        buttonDisabled: false,
+        buttonLink: "https://sidnath21.github.io/rl-websites/policy-gradients/",
+        columnClass: "col-lg-4",
+        categories: ["Robotics", "Data Science/ML"]
+    },
+    {
         imgSrc: "images/nerf_6400.gif",
         title: "Building Neural Radiance Field (NeRFs)",
         text: "Implemented a deep learning model for reconstructing a 3D representation of a scene from 2D images using PyTorch!",

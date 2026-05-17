@@ -226,8 +226,8 @@ body {
 .project-row-main {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 0.85rem;
+    justify-content: flex-start;
+    flex: 1;
     padding: 1rem 1.2rem;
     min-width: 0;
     width: 100%;
@@ -235,7 +235,7 @@ body {
 
 .project-row-main .card-title {
     font-size: 1.05rem;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.5rem;
 }
 
 .project-row-text {
@@ -249,7 +249,8 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 0.75rem;
-    padding-top: 0.25rem;
+    margin-top: auto;
+    padding-top: 0.75rem;
 }
 
 .project-row-badges {

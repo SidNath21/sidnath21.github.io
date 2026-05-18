@@ -261,6 +261,14 @@ body {
     line-height: 1.45;
 }
 
+.project-row-note {
+    margin: 0.5rem 0 0;
+    font-size: 0.85rem;
+    color: #6b7280;
+    font-style: italic;
+    line-height: 1.45;
+}
+
 .project-row-footer {
     display: flex;
     justify-content: space-between;

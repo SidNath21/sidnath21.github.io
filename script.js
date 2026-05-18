@@ -112,6 +112,7 @@ const projects = [
         imgSrc: "images/melodex.png",
         title: "Melodex",
         text: "Rank the music you actually love — sign in with Spotify to score tracks 1–10, build your personal all-time ranking, compare songs head-to-head, and visualize your taste with audio-feature maps and a friends feed.",
+        note: "Note: The live app is limited to Spotify Development Mode — only 5 manually allowlisted users can sign in",
         badges: ["React", "Next.js", "Vercel", "Supabase", "TypeScript", "Python"],
         buttonText: "Project",
         buttonDisabled: false,
@@ -474,6 +475,13 @@ const projects = [
 
         cardBodyDiv.appendChild(h5);
         cardBodyDiv.appendChild(p);
+
+        if (project.note) {
+            const note = document.createElement('p');
+            note.className = 'project-row-note';
+            note.textContent = project.note;
+            cardBodyDiv.appendChild(note);
+        }
 
         const cardFooter = document.createElement('div');
         cardFooter.className = 'project-row-footer';

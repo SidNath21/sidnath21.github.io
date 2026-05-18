@@ -75,7 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
     "Vue.js": "#21601c",
     "Firebase": "#F2545B",
     "C++": "#083A42",
-    "ROS": "rgb(36, 37, 93)"
+    "ROS": "rgb(36, 37, 93)",
+    "React": "#087EA4",
+    "Next.js": "#1a1a1a",
+    "Vercel": "#3d3d3d",
+    "Supabase": "#238C6E",
+    "TypeScript": "#3178C6"
 };
 
 const projects = [
@@ -102,6 +107,17 @@ const projects = [
         buttonLink: "#",
         columnClass: "col-lg-4",
         categories: ["Computer Vision"]
+    },
+    {
+        imgSrc: "images/melodex.png",
+        title: "Melodex",
+        text: "Rank the music you actually love — sign in with Spotify to score tracks 1–10, build your personal all-time ranking, compare songs head-to-head, and visualize your taste with audio-feature maps and a friends feed.",
+        badges: ["React", "Next.js", "Vercel", "Supabase", "TypeScript", "Python"],
+        buttonText: "Project",
+        buttonDisabled: false,
+        buttonLink: "https://melodex-rho.vercel.app",
+        columnClass: "col-lg-4",
+        categories: ["Fullstack/Web Dev"]
     },
     {
         imgSrc: "images/diffusion_process_cc_epoch_20.mp4",
@@ -429,7 +445,7 @@ const projects = [
         if (project.imgSrc.endsWith('.mp4')) {
             const video = document.createElement('video');
             video.src = project.imgSrc;
-            video.className = 'project-media';
+            video.className = 'project-media project-media--video';
             video.alt = project.title;
             video.loop = true;
             video.muted = true;
@@ -439,7 +455,7 @@ const projects = [
         } else {
             const img = document.createElement('img');
             img.src = project.imgSrc;
-            img.className = 'project-media';
+            img.className = 'project-media project-media--image';
             img.alt = project.title;
             img.loading = 'lazy'; // Lazy loading for performance
             mediaWrapper.appendChild(img);

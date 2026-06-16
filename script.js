@@ -154,6 +154,17 @@ const projects = [
         categories: ["Robotics", "Data Science/ML"]
     },
     {
+        imgSrc: "images/llm_rl_post_training.png",
+        title: "LLM Reinforcement Learning",
+        text: "Implemented GR-REINFORCE and GRPO for LLM post-training with verifiable outcome rewards, fine-tuning a LoRA-adapted Qwen2.5 policy on difficult math and formatting tasks while staying close to a frozen reference model via KL regularization.",
+        badges: ["Python", "PyTorch"],
+        buttonText: "Project",
+        buttonDisabled: false,
+        buttonLink: "https://sidnath21.github.io/rl-websites/llm-rl-post-training/",
+        columnClass: "col-lg-4",
+        categories: ["Data Science/ML"]
+    },
+    {
         imgSrc: "images/nerf_6400.gif",
         title: "Building Neural Radiance Field (NeRFs)",
         text: "Implemented a deep learning model for reconstructing a 3D representation of a scene from 2D images using PyTorch!",

@@ -154,6 +154,17 @@ const projects = [
         categories: ["Robotics", "Data Science/ML"]
     },
     {
+        imgSrc: "images/dino_processed.mp4",
+        title: "Dino Game Reinforcement Learning",
+        text: "Trained a Double Dueling DQN agent to play the Chrome Dino game from screen-captured frames, using stacked 84×84 grayscale observations and a custom Gymnasium-style environment with jump/no-op control.",
+        badges: ["Python", "PyTorch"],
+        buttonText: "Project",
+        buttonDisabled: false,
+        buttonLink: "https://sidnath21.github.io/rl-websites/dino-ddqn/",
+        columnClass: "col-lg-4",
+        categories: ["Data Science/ML"]
+    },
+    {
         imgSrc: "images/llm_rl_post_training.png",
         title: "LLM Reinforcement Learning",
         text: "Implemented GR-REINFORCE and GRPO for LLM post-training with verifiable outcome rewards, fine-tuning a LoRA-adapted Qwen2.5 policy on difficult math and formatting tasks while staying close to a frozen reference model via KL regularization.",
@@ -193,7 +204,7 @@ const projects = [
         badges: ["Python", "ROS"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://drive.google.com/file/d/1_xl4lE7YZP0TngLjnpd-jFNQs9YLG1L9/view?usp=sharing",
+        buttonLink: "https://drive.google.com/file/d/15-UTuGZ79kzqi_WuaCfAiTRb7a1eNvG9/view?usp=sharing",
         columnClass: "col-lg-4",
         categories: ["Robotics"]
     },
@@ -204,7 +215,7 @@ const projects = [
         badges: ["Python", "ROS"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://drive.google.com/file/d/1jGOedQ2y4cQc9q9WBSWymlwH3TbIL86N/view?usp=sharing",
+        buttonLink: "https://drive.google.com/file/d/1s3WeglsF0MMkW8-bJ_KRxUQ9ny2FbNW1/view?usp=sharing",
         columnClass: "col-lg-4",
         categories: ["Robotics"]
     },
@@ -215,7 +226,7 @@ const projects = [
         badges: ["Python", "ROS"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://drive.google.com/file/d/1cbNYFy-Hqx8V9D9DmrmKfmmguTV2uepe/view?usp=sharing",
+        buttonLink: "https://drive.google.com/file/d/1STtY5iTuAE6AY6wkXdgNowjAHMX9kgtc/view?usp=sharing",
         columnClass: "col-lg-4",
         categories: ["Robotics"]
     },
@@ -226,7 +237,7 @@ const projects = [
         badges: ["Python"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://drive.google.com/file/d/1ybESjrOR6fK_F-mGCyeLHoR4SFmJ8Jys/view?usp=sharing",
+        buttonLink: "https://drive.google.com/file/d/1vjHy6WxB4zD3Lte_khOSY49lsYJO26z0/view?usp=sharing",
         columnClass: "col-lg-4",
         categories: ["Robotics"]
     },
@@ -238,7 +249,7 @@ const projects = [
         badges: ["Python", "ROS"],
         buttonText: "Project",
         buttonDisabled: false,
-        buttonLink: "https://drive.google.com/file/d/1bTRbHWvK34CK515wtVo9Uxc4frYkHaIS/view?usp=sharing",
+        buttonLink: "https://drive.google.com/file/d/1Q1vb8e2Ep27PgG2TV2e86EOS9ebPTuF8/view?usp=sharing",
         columnClass: "col-lg-4",
         categories: ["Robotics"]
     },

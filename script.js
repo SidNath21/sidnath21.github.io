@@ -165,6 +165,17 @@ const projects = [
         categories: ["Data Science/ML"]
     },
     {
+        imgSrc: "images/cube.mp4",
+        title: "Offline Reinforcement Learning",
+        text: "Implemented three offline RL algorithms — SAC + BC, Implicit Q-Learning (IQL), and Flow Q-Learning (FQL) — on continuous-control tasks from OGBench.",
+        badges: ["Python", "PyTorch"],
+        buttonText: "Project",
+        buttonDisabled: false,
+        buttonLink: "https://sidnath21.github.io/rl-websites/offline-rl/",
+        columnClass: "col-lg-4",
+        categories: ["Robotics", "Data Science/ML"]
+    },
+    {
         imgSrc: "images/llm_rl_post_training.png",
         title: "LLM Reinforcement Learning",
         text: "Implemented GR-REINFORCE and GRPO for LLM post-training with verifiable outcome rewards, fine-tuning a LoRA-adapted Qwen2.5 policy on difficult math and formatting tasks while staying close to a frozen reference model via KL regularization.",
